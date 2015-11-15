@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#6699ff">
-    
-    
+    android:background="@drawable/cover_pic"
+    android:gravity="bottom" >
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/cover_login_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_login_button"
+            android:text="@string/login_button"
+            android:textColor="#FAF0E6"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/cover_register_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/selector_register_button"
+            android:text="@string/register_button"
+            android:textColor="#4D4D4D"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
