@@ -5,37 +5,47 @@
     android:background="@drawable/cover_pic"
     android:gravity="bottom" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:gravity="center_vertical" >
+        android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/cover_login_button"
-            android:layout_width="140dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/selector_login_button"
-            android:text="@string/login_button"
-            android:textColor="#FAF0E6"
-            android:textSize="15sp" />
+            android:layout_weight="1"
+            android:gravity="center_horizontal" 
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/cover_register_button"
-            android:layout_width="140dp"
+            <Button
+                android:id="@+id/cover_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_login_button"
+                android:textColor="#FAF0E6"
+                android:textSize="15sp" 
+                android:text="@string/login_button"/>
+        </LinearLayout>
+     
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/selector_register_button"
-            android:text="@string/register_button"
-            android:textColor="#4D4D4D"
-            android:textSize="15sp" />
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/cover_register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_register_button"
+                android:text="@string/register_button"
+                android:textColor="#4D4D4D"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    
 
 </RelativeLayout>

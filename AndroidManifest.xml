@@ -22,10 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity 
-            android:name="com.example.diandi.app.activity.Primary">
-            
+        <activity android:name="com.example.diandi.app.activity.Primary" >
+        </activity>
+        <activity android:name="com.example.diandi.app.activity.LifeContent" >
+        </activity>
+        <activity android:name="com.example.diandi.app.activity.SayContent" >
+        </activity>
+        <activity android:name="com.example.diandi.app.content.EditSay" >
         </activity>
     </application>
 
