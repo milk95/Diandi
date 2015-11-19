@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 public class LoadCover extends Activity implements OnClickListener{
 
+	private MyApplication app;
     /*
      * 封面 登录和注册的按钮
      */
@@ -32,7 +33,7 @@ public class LoadCover extends Activity implements OnClickListener{
 	/*
 	 * 数据库
 	 */
-	private DiandiDB diandiDB;
+	public DiandiDB diandiDB;
 	
 	/*
 	 * 接受注册和登录dialog返回的广播
@@ -46,6 +47,8 @@ public class LoadCover extends Activity implements OnClickListener{
 				boolean loginState=false;
 				String address = intent.getStringExtra("login_address");
 				String password = intent.getStringExtra("login_password");
+				
+			
 				/*
 				 * 验证账号密码的准确性
 				 */
@@ -54,6 +57,7 @@ public class LoadCover extends Activity implements OnClickListener{
 					for(AccountInfo account:accountList){
 						if(account.getAddress().equals(address)&&account.getPassword().equals(password)){
 							loginState=true;
+							app.setAddress(account.getAddress());
 						}
 					}
 				}
@@ -98,6 +102,7 @@ public class LoadCover extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.cover_layout);
 
+		app=(MyApplication) getApplication();
 		/*
 		 * 获得diandiDB的实例
 		 */

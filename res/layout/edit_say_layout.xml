@@ -38,10 +38,13 @@
         </LinearLayout>
         
         <TextView 
+            android:id="@+id/say_edit_time_tv"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="某年某月某日"
+            android:textSize="16sp"
+            android:text="2015.11.18"
             android:gravity="center_vertical"/>
     </LinearLayout>
 
@@ -71,7 +74,7 @@
                 android:hint="记录只言片语"
                 android:lineSpacingExtra="5dp"
                 android:textCursorDrawable="@drawable/color_cursor"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

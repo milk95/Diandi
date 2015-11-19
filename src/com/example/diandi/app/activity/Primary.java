@@ -6,10 +6,9 @@ import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
+
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -22,7 +21,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
-import android.widget.Toast;
 
 public class Primary extends Activity {
 
@@ -45,7 +43,6 @@ public class Primary extends Activity {
 		 */
 		mContext = this;
 
-		
 		/*
 		 * 初始化menuBt,左侧菜单按钮
 		 */
@@ -63,7 +60,6 @@ public class Primary extends Activity {
 		});
 	}
 
-	
 	/*
 	 * 左侧菜单动作的方法
 	 */
@@ -71,44 +67,56 @@ public class Primary extends Activity {
 		// 一个自定义的布局，作为显示的内容
 		View contentView = LayoutInflater.from(mContext).inflate(
 				R.layout.left_menu_layout, null, false);
-		// 设置按钮的点击事件
-		Button lifeItemBt = (Button) contentView
-				.findViewById(R.id.life_item_button);
 		/*
-		 * 设置popupwindow出现，背景即变暗
+		 * 设置popupWindow出现，背景即变暗
 		 */
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.alpha = 0.7f;
-        getWindow().setAttributes(lp);
-        
-        /*
-         * 
-         */
-        lifeItemBt.setOnClickListener(new OnClickListener() {
+		lp.alpha = 0.7f;
+		getWindow().setAttributes(lp);
+
+		/*
+		 *  设置头像按钮的事件
+		 */
+		ImageButton portraitImgBt = (ImageButton) contentView
+				.findViewById(R.id.portrait_imgbt);
+		portraitImgBt.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent=new Intent();
+			}
+		});
+
+		/*
+		 * 设置风景按钮的监听事件
+		 */
+		Button landscapeItemBt = (Button) contentView
+				.findViewById(R.id.landscape_item_button);
+		landscapeItemBt.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(mContext, LifeContent.class);
-				startActivity(intent);
-			}
-		});
-		
-		
-        /*
-         * 初始化、监听 片语选项 按钮
-         */
-		Button sayItemBt=(Button) contentView.findViewById(R.id.say_item_button);
-		sayItemBt.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent=new Intent(mContext, SayContent.class);
+				Intent intent = new Intent(mContext, LandscapeContent.class);
 				startActivity(intent);
 			}
 		});
 
-		//设置宽、高
-		popupWindow = new PopupWindow(contentView, 800,
+		/*
+		 * 设置片语按钮的监听事件
+		 */
+		Button sayItemBt = (Button) contentView
+				.findViewById(R.id.say_item_button);
+		sayItemBt.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(mContext, SayContent.class);
+				startActivity(intent);
+			}
+		});
+
+		// 设置宽、高
+		popupWindow = new PopupWindow(contentView, 900,
 				LayoutParams.MATCH_PARENT, true);
 
 		// 设置动画效果
@@ -129,18 +137,18 @@ public class Primary extends Activity {
 				return false;
 			}
 		});
-		
+
 		/*
-		 * 监听popupwindow消失，背景颜色恢复
+		 * 监听popupWindow消失，背景颜色恢复
 		 */
 		popupWindow.setOnDismissListener(new OnDismissListener() {
-			 
-            @Override
-            public void onDismiss() {
-                WindowManager.LayoutParams lp = getWindow().getAttributes();
-                lp.alpha = 1f;
-                getWindow().setAttributes(lp);
-            }
-        });
+
+			@Override
+			public void onDismiss() {
+				WindowManager.LayoutParams lp = getWindow().getAttributes();
+				lp.alpha = 1f;
+				getWindow().setAttributes(lp);
+			}
+		});
 	}
 }
