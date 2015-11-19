@@ -19,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
 
@@ -74,18 +75,7 @@ public class Primary extends Activity {
 		lp.alpha = 0.7f;
 		getWindow().setAttributes(lp);
 
-		/*
-		 *  设置头像按钮的事件
-		 */
-		ImageButton portraitImgBt = (ImageButton) contentView
-				.findViewById(R.id.portrait_imgbt);
-		portraitImgBt.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent=new Intent();
-			}
-		});
+		
 
 		/*
 		 * 设置风景按钮的监听事件
