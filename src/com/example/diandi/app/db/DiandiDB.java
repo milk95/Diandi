@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.diandi.app.model.AccountInfo;
+import com.example.diandi.app.model.IdeaData;
 import com.example.diandi.app.model.SayData;
 
 import android.content.ContentValues;
@@ -125,6 +126,48 @@ public class DiandiDB {
 				sayData.setSayEditTime(cursor.getString(cursor
 						.getColumnIndex("sayedittime")));
 				list.add(sayData);
+			} while (cursor.moveToNext());
+		}
+		return list;
+	}
+
+	public void saveIdeaData(IdeaData ideaData) {
+		if (ideaData != null) {
+			ContentValues values = new ContentValues();
+			values.put("nowaddress", ideaData.getNowAddress());
+			values.put("ideatitle", ideaData.getIdeaTitle());
+			values.put("ideacontent", ideaData.getIdeaContent());
+			values.put("date", ideaData.getDate());
+			db.insert("IdeaData", null, values);
+		}
+	}
+
+	public void updateIdeaData(IdeaData ideaData, String title) {
+		if (ideaData != null) {
+			ContentValues values = new ContentValues();
+			values.put("ideatitle", ideaData.getIdeaTitle());
+			values.put("ideacontent", ideaData.getIdeaContent());
+			values.put("date", ideaData.getDate());
+			db.update("IdeaData", values, "ideatitle=?", new String[] { title });
+		}
+	}
+
+	public List<IdeaData> loadIdeaDatas() {
+		List<IdeaData> list = new ArrayList<IdeaData>();
+		Cursor cursor = db
+				.query("IdeaData", null, null, null, null, null, null);
+		if (cursor.moveToFirst()) {
+			do {
+				IdeaData ideaData = new IdeaData();
+				ideaData.setId(cursor.getInt(cursor.getColumnIndex("id")));
+				ideaData.setNowAddress(cursor.getString(cursor
+						.getColumnIndex("nowaddress")));
+				ideaData.setIdeaTitle(cursor.getString(cursor
+						.getColumnIndex("ideatitle")));
+				ideaData.setIdeaContent(cursor.getString(cursor
+						.getColumnIndex("ideacontent")));
+				ideaData.setDate(cursor.getString(cursor.getColumnIndex("date")));
+				list.add(ideaData);
 			} while (cursor.moveToNext());
 		}
 		return list;

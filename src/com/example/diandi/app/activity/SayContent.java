@@ -40,7 +40,7 @@ public class SayContent extends Activity implements OnClickListener,
 	/*
 	 * 系统日期
 	 */
-	SimpleDateFormat sdf;
+	private SimpleDateFormat sdf;
 	/*
 	 * 更新listView 的string
 	 */
@@ -105,7 +105,6 @@ public class SayContent extends Activity implements OnClickListener,
 					HashMap<String, Object> map = new HashMap<String, Object>();
 					map.put("text", sayData.getSaySentence());
 					map.put("time", sayData.getSayEditTime());
-					//Toast.makeText(this, sayData.getSayEditTime(),Toast.LENGTH_SHORT).show();
 					itemList.add(0,map);
 				}
 			}

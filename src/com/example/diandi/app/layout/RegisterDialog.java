@@ -10,11 +10,13 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+
 
 
 
@@ -31,6 +33,7 @@ public class RegisterDialog extends Dialog implements android.view.View.OnClickL
 	private EditText reAddressEt;
 	private EditText rePasswordEt;
 	private EditText reNameEt;
+	private EditText reRePasswordEt;
 	
 	public RegisterDialog(Context context) {
 		super(context);
@@ -55,14 +58,21 @@ public class RegisterDialog extends Dialog implements android.view.View.OnClickL
 		/*
 		 * 初始化各控件
 		 */
+
 		reAddressEt=(EditText) findViewById(R.id.register_mailaddress_edit);
 		rePasswordEt=(EditText) findViewById(R.id.register_password_edit);
+		reRePasswordEt=(EditText) findViewById(R.id.repeat_password_edit);
 		reNameEt=(EditText) findViewById(R.id.regester_name_edit);
 		registerBt=(Button) findViewById(R.id.regester_button);
+		
+		rePasswordEt.setTransformationMethod(PasswordTransformationMethod.getInstance());
+		reRePasswordEt.setTransformationMethod(PasswordTransformationMethod.getInstance());
 		
 		/*
 		 * 监听dialog注册按钮
 		 */
+		
+		
 		registerBt.setOnClickListener(this);
 	}
 
@@ -73,6 +83,7 @@ public class RegisterDialog extends Dialog implements android.view.View.OnClickL
 			/*
 			 * 将获得的数据以广播形式传回
 			 */
+			
 			Intent registerIntent = new Intent();
 			registerIntent.setAction("REGISTER");
 			registerIntent.putExtra("register_address", reAddressEt.getText()

@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -53,6 +55,8 @@ public class LoginDialog extends Dialog implements
 		loginAddressEt = (EditText) findViewById(R.id.login_mailaddress_edit);
 		loginPasswordEt = (EditText) findViewById(R.id.login_password_edit);
 		loginBt = (Button) findViewById(R.id.login_button);
+		
+		loginPasswordEt.setTransformationMethod(PasswordTransformationMethod.getInstance());
 		
 		/*
 		 * ¼àÌýdialogµÇÂ¼°´Å¥

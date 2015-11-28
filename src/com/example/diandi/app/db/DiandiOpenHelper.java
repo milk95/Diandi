@@ -17,7 +17,11 @@ public class DiandiOpenHelper extends SQLiteOpenHelper {
 
 	public static final String CREATE_SAYDATA = "create table SayData ("
 			+ "id integer primary key autoincrement, " + "nowaddress text, "
-			+ "saysentence text, "+"sayedittime text)";
+			+ "saysentence text, " + "sayedittime text)";
+
+	public static final String CREATE_IDEADATA = "create table IdeaData ("
+			+ "id integer primary key autoincrement, " + "nowaddress text, "
+			+ "ideatitle text, " + "ideacontent text, " + "date text)";
 
 	public DiandiOpenHelper(Context context, String name,
 			CursorFactory factory, int version) {
@@ -31,6 +35,7 @@ public class DiandiOpenHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CREATE_ACCOUNTINFO);
 		db.execSQL(CREATE_SAYDATA);
+		db.execSQL(CREATE_IDEADATA);
 	}
 
 	@Override

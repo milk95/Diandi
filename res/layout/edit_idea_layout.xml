@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -17,7 +17,7 @@
             android:gravity="right|center" >
 
             <Button
-                android:id="@+id/say_save_button"
+                android:id="@+id/idea_save_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/selector_menu_button"
@@ -26,7 +26,7 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/say_cancle_button"
+                android:id="@+id/idea_cancle_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/selector_menu_button"
@@ -35,14 +35,13 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/say_edit_time_tv"
+        <EditText
+            android:id="@+id/idea_title_et"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="2015.11.18"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@null"
+            android:hint="一句话描述创意"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -64,12 +63,12 @@
             android:layout_weight="9" >
 
             <EditText
-                android:id="@+id/say_content_edit"
+                android:id="@+id/idea_content_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:ems="10"
-                android:hint="记录只言片语"
+                android:hint="留下电光火石间的灵感"
                 android:lineSpacingExtra="5dp"
                 android:textCursorDrawable="@drawable/color_cursor"
                 android:textSize="20sp" />

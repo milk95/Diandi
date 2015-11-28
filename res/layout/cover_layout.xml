@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cover_pic"
+    android:background="@drawable/cover"
     android:gravity="bottom" >
 
     <LinearLayout
@@ -39,7 +39,7 @@
                 android:id="@+id/cover_register_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_register_button"
+                android:background="@drawable/selector_menu_button"
                 android:text="@string/register_button"
                 android:textColor="#4D4D4D"
                 android:textSize="15sp" />

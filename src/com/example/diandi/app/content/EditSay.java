@@ -51,8 +51,11 @@ public class EditSay extends Activity implements OnClickListener {
 		app = (MyApplication) getApplication();
 		sayEditTimeTv=(TextView) findViewById(R.id.say_edit_time_tv);
 		sayContentEt = (EditText) findViewById(R.id.say_content_edit);
+		
+		
 		sayCancleBt = (Button) findViewById(R.id.say_cancle_button);
 		saySaveBt = (Button) findViewById(R.id.say_save_button);
+		
 		/*
 		 * 获取系统时间
 		 */

@@ -35,6 +35,12 @@
         </activity>
         <activity android:name="com.example.diandi.app.activity.LandscapeContent" >
         </activity>
+        <activity android:name="com.example.diandi.app.content.EditIdea" >
+        </activity>
+        <activity android:name="com.example.diandi.app.activity.IdeaContent" >
+        </activity>
+        <activity android:name="com.example.diandi.app.content.ReEditIdea" >
+        </activity>
     </application>
 
 </manifest>

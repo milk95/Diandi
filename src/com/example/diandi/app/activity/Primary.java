@@ -104,6 +104,20 @@ public class Primary extends Activity {
 				startActivity(intent);
 			}
 		});
+		
+		/*
+		 * 设置想法按钮的监听事件
+		 */
+		Button ideaItemBt = (Button) contentView
+				.findViewById(R.id.idea_item_button);
+		ideaItemBt.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(mContext, IdeaContent.class);
+				startActivity(intent);
+			}
+		});
 
 		// 设置宽、高
 		popupWindow = new PopupWindow(contentView, 900,
