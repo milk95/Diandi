@@ -75,22 +75,6 @@ public class Primary extends Activity {
 		lp.alpha = 0.7f;
 		getWindow().setAttributes(lp);
 
-		
-
-		/*
-		 * 设置风景按钮的监听事件
-		 */
-		Button landscapeItemBt = (Button) contentView
-				.findViewById(R.id.landscape_item_button);
-		landscapeItemBt.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(mContext, LandscapeContent.class);
-				startActivity(intent);
-			}
-		});
-
 		/*
 		 * 设置片语按钮的监听事件
 		 */
